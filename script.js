@@ -1,7 +1,10 @@
 function playGame () {
+    
 
     let playerScore = 0
     let computerScore = 0
+    let round = 1;
+    let ties = 0;
 
     const displayPlayerScore = document.querySelector('.PlayerScore')
     const displayComputerScore = document.querySelector('.ComputerScore')
@@ -34,10 +37,12 @@ function playGame () {
     function playRound (playerSelection, computerSelection) {
         const playerChoice = playerSelection.toLowerCase();
         const computerChoice = computerSelection.toLowerCase();
-        //console.log(playerScore)
 
-    
-        if (
+        if (playerChoice === computerChoice) {
+            ties += 1
+            document.querySelector('.Tie').textContent = `Ties: ${ties}`
+        }
+        else if (
             (playerChoice === "rock" && computerChoice === "scissors") ||
             (playerChoice === "paper" && computerChoice === "rock") ||
             (playerChoice === "scissors" && computerChoice === "paper")
@@ -58,11 +63,21 @@ function playGame () {
         
         displayPlayerSelection.textContent = `Player chose: ${playerChoice}`
         displayComputerSelection.textContent = `Computer chose: ${computerChoice}`
-            
-            
-        
+        round += 1
+        if ( round < 6) {
+            document.querySelector('.Round').textContent = `Round ${round}/5`
+        }
+        else {
+            if (playerScore > computerScore) {
+                document.querySelector('.Gameover').textContent = `Wow dude, congrats, you won!`
+            }
+            else {
+                document.querySelector('.Gameover').textContent = `Oh shit..., computer won, good luck next time`
+            }   
     }
         
+}
+
 }
 
 

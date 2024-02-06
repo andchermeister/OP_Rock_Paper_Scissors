@@ -3,86 +3,100 @@ body {
 }
 
 .Header {
-    color: #F2F22E;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
+    color: white;
     display: flex;
-    font-size: 58px;
+    font-size: 38px;
     justify-content: center;
-    margin-top: 30px;
+}
+
+.Round {
+    color: white;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.Tie {
+    color: white;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.Gameover {
+    color: white;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.restart {
+    border-radius: 12px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    width: 150px;
 }
 
 .Player_text {
-    color: #F2F22E;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
+    color: white;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .Computer_text {
-    color: #F2F22E;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
+    color: white;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .PlayerScore {
     color: #4FF22E;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .PlayerSelection {
     color: #4FF22E;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .ComputerScore {
-    color: #F22E69;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
+    color: orange;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .ComputerSelection {
-    color: #F22E69;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.2mm;
+    color: orange;
     display: flex;
-    font-size: 48px;
+    font-size: 28px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .player_boxes {
     display: flex;
-    font-size: 18px;
     gap: 70px;
     justify-content: center;
 }
 
 .player_box {
     margin-top: 15px;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }
 
 .computer_boxes {
@@ -94,8 +108,8 @@ body {
 
 .computer_box {
     margin-top: 15px;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }
 
 .Rock_player img {
