@@ -15,18 +15,35 @@ function playGame () {
     let paperImage = document.querySelector('.Paper_player img')
     let scissorsImage = document.querySelector('.Scissors_player img')
 
-    rockImage.addEventListener('click', () => playRound('rock', getComputerChoice()))
-    paperImage.addEventListener('click', () => playRound('paper', getComputerChoice()))
-    scissorsImage.addEventListener('click', () => playRound('scissors', getComputerChoice()))
+    function playRock() {
+        playRound('rock', getComputerChoice());
+    }
 
-    
+    function playPaper() {
+        playRound('paper', getComputerChoice());
+    }
+
+    function playScissors() {
+        playRound('scissors', getComputerChoice());
+    }
+
+    rockImage.addEventListener('click', playRock);
+    paperImage.addEventListener('click', playPaper);
+    scissorsImage.addEventListener('click', playScissors);
+
+    function removeImageListener() {
+        rockImage.removeEventListener('click', playRock);
+        paperImage.removeEventListener('click', playPaper);
+        scissorsImage.removeEventListener('click', playScissors);
+    }
+
 
     function getComputerChoice() {
         const randomNumber = Math.floor(Math.random() * 3)
     
         switch(randomNumber) {
             case 0:
-                return "Rock"
+                return "Rock"   
             case 1:
                 return "Paper"
             case 2: 
@@ -63,22 +80,25 @@ function playGame () {
         
         displayPlayerSelection.textContent = `Player chose: ${playerChoice}`
         displayComputerSelection.textContent = `Computer chose: ${computerChoice}`
+
         round += 1
-        if ( round < 6) {
-            document.querySelector('.Round').textContent = `Round ${round}/5`
-        }
-        else {
-            if (playerScore > computerScore) {
+        document.querySelector('.Round').textContent = `Round ${round}`
+        
+
+        if (playerScore === 3 || computerScore ===3 ) {
+            removeImageListener()
+            if (playerScore === 3  ) {
                 document.querySelector('.Gameover').textContent = `Wow dude, congrats, you won!`
             }
-            else {
+            else if (computerScore === 3) {
                 document.querySelector('.Gameover').textContent = `Oh shit..., computer won, good luck next time`
-            }   
-    }
+            }  
+            
+        } 
+    
         
 }
 
 }
-
 
 playGame()
